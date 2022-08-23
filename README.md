@@ -1,27 +1,17 @@
-# Week4tut
+Project Title: Lab week 34
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Angular: 
+    1. ng new week4tut 
+    2. ng new my-app
+    3. ng generate component "login"
+    4. ng generate component "account"
+    5. ng generate module app-routing --flat --module=app
+- Npm:
+    1. npm install –g @angular/cli
+    2. npm install bootstrap --save
+- GIT:
+    1. git init
+    2. git add -A
+    3. git commit -m"Week 4 Tutorial setup"
+    4. git remote add origin https://github.com/Kirat-02/Week4.git
+    5. git push f -u origin main
