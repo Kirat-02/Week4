@@ -10,27 +10,20 @@
                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
   
-                <div class="form-outline form-white mb-4">
-                  <input type="email" [(ngModel)]="email" name="email" id="email" class="form-control form-control-lg" placeholder="example123@gmail.com" />
-                  <label class="form-label" for="email">Email</label>
-                </div>
-  
-                <div class="form-outline form-white mb-4">
-                  <input type="password" [(ngModel)]="password" name="password" id="password" class="form-control form-control-lg" />
-                  <label class="form-label" for="password">Password</label>
-                </div>
-                
-                <div *ngIf="error;" >{{error}}</div>
+                  <div class="d-flex justify-content-center">
+                    Username by email:<br>
+                    <input type="email" [(ngModel)]="userpwd.username"><br>
+                    User password:<br>
+                    <input type="password" [(ngModel)]="userpwd.pwd"><br>
+                    Birthdate:
+                    <input type="date" [(ngModel)]="userobj.userbirthdate"><br>
+                    Age:
+                    <input type="number" [(ngModel)]="userobj.userage"><br>
+                  </div>
+          
+              <button class="log_out" value="login" id="login" (click)="loginfunc()">Login</button>
 
-                <br/>
-                <button class="btn btn-outline-light btn-lg px-5" (click)="formSubmitted()" type="submit">Login</button>
-  
-                <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                  <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-                  <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                  <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-                </div>
-  
+            
               </div>
   
   
