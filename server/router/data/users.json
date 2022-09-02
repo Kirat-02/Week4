@@ -1,0 +1,25 @@
+[{
+    "username": "kirat",
+    "birthdate": "10/20/2022",
+    "age": 24,
+    "email": "abc@email.com",
+    "valid": 1,
+    "pwd": "123"
+},
+{
+    "username": "john",
+    "birthdate": "10/20/2022",
+    "age": 24,
+    "email": "abc@email.com",
+    "valid": 1,
+    "pwd": "123"
+},
+{
+    "username": "singh",
+    "birthdate": "10/20/2022",
+    "age": 24,
+    "email": "abc@email.com",
+    "valid": 1,
+    "pwd": "123"
+}
+]

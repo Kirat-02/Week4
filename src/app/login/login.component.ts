@@ -11,10 +11,11 @@ interface Userpwd{
 };
 
 interface Userobj{
-  userid: number;
   username: string;
   userbirthdate: string;
   userage: number;
+  useremail: string;
+  uservalid: boolean;
 };
 
 import { NgForm } from '@angular/forms';
@@ -30,25 +31,38 @@ const BACKEND_URL = 'http://localhost:3000';
 
 export class LoginComponent implements OnInit {
 
-  userpwd: Userpwd = {username: "John@gmail.com", pwd:'1233'}
-  userobj: Userobj = {userid: 1, username: this.userpwd.username, userbirthdate: '10/20/2022', userage: 56}
+  userpwd: Userpwd = {username: "", pwd:""}
+  userobj: Userobj = {username: "", userbirthdate: "", userage: 56, useremail: "", uservalid: true}
 
   constructor(private router: Router, private httpClient: HttpClient) { }
 
   ngOnInit() {}
 
+  
+
   public loginfunc(){
     this.httpClient.post(BACKEND_URL + '/login', this.userpwd, httpOptions)
       .subscribe((data:any)=>{
-        alert(JSON.stringify(this.userpwd));
         if(data.ok){
-          sessionStorage.setItem('userid', this.userobj.userid.toString())
-          sessionStorage.setItem('username', this.userobj.username.toString())
-          sessionStorage.setItem('userbirthdate', this.userobj.userbirthdate.toString())
-          sessionStorage.setItem('userage', this.userobj.userage.toString())
+
+          this.userobj.username = data.user.username;
+          this.userobj.userbirthdate = data.user.birthdate;
+          this.userobj.userage = data.user.age;
+          this.userobj.useremail = data.user.email;
+          this.userobj.uservalid = data.user.valid;
+
+          sessionStorage.setItem('username', this.userobj.username)
+          sessionStorage.setItem('userbirthdate', this.userobj.userbirthdate)
+          sessionStorage.setItem('userage',this.userobj.userage.toString())
+          sessionStorage.setItem('useremail', this.userobj.useremail)
+          sessionStorage.setItem('uservalid', this.userobj.uservalid.toString())
+
           this.httpClient.post<Userobj[]>(BACKEND_URL + '/account', this.userobj, httpOptions)
+
           .subscribe((m: any) => {console.log(m[0]);});
-          this.router.navigateByUrl('accountpage')
+
+          this.router.navigateByUrl('/account')
+
         } else {
           alert("Sorry, Username or password is invalid");
         }

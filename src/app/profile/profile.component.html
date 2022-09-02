@@ -1,0 +1,25 @@
+
+<ul class="nav bg-dark justify-content-end">
+    <div class="nav-item">
+        <a class="nav-link" routerLink="/" (click)="logout()">Logout</a>
+    </div>
+</ul>
+
+
+<div class="container">
+
+    <div class="row justify-content-center">
+        <h1>Edit Profile</h1>
+    </div>
+    <div class="row">
+        Username: <input class="form-control" type="text" [(ngModel)]="username"/> <br>
+        Email:    <input class="form-control" type="text" [(ngModel)]="useremail" /><br>
+        Birth Date: <input class="form-control" type="text" [(ngModel)]="birthdate" ><br>
+        Age:  <input class="form-control" type="number" [(ngModel)]="userage" ><br>
+        valid: <input class="" type="checkbox" [(ngModel)]="uservalid"><br>
+    </div>
+    <br>
+    <div class="row">
+        <button class="btn btn-primary" (click)="updateProfile()">Update Profile</button>
+    </div>
+</div>

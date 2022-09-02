@@ -17,4 +17,7 @@ var server = http.listen(3000, function(){
 });
 
 app.post('/login', require('./router/postLogin'));
+
 app.post('/account', require('./router/account'));
+
+app.post('/profile', require('./router/profile'));

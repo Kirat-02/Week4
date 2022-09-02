@@ -2,12 +2,16 @@
 <ul class="nav bg-dark justify-content-end">
  
   <li class="nav-item">
-    <a class="nav-link" routerLink="/account">Account</a>
+    <a class="nav-link" routerLink="/account" (click)="account()">Account</a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" routerLink="/login">Login</a>
+    <a class="nav-link" routerLink="/profile" (click)="profile()">Profile</a>
   </li>
+
+  <div *ngIf="hide == true">
+    <a class="nav-link" routerLink="/" (click)="logout()">Logout</a>
+  </div>
   
 </ul>
 
